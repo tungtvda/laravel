@@ -14,6 +14,7 @@ use App\Modules\Controller;
 use App\Modules\Users\Models\Users;
 use Illuminate\Http\Response;
 use Hash;
+use Illuminate\Support\Facades\Auth;
 
 class UsersController extends Controller{
     /**
@@ -208,10 +209,26 @@ class UsersController extends Controller{
     }
 
     public function getLogin(){
+//        Auth::logout();
+//        print_r(Auth::user());
+//        exit;
+        return response()->json(Auth::user());
         return view('Users::login');
     }
     public function postLogin(LoginRequest $request){
-        print_r($request->all());
+        $email=$request->email;
+         $pass=$request->password;
+        $auth=array(
+            'email'=>$email,
+            'password'=>$pass
+        );
+        if(Auth::attempt($auth))
+        {
+            print_r(Auth::user());
+        }
+        else{
+            echo 'thaats bai';
+        }
     }
     public function getRegister(){
         return view('Users::register');

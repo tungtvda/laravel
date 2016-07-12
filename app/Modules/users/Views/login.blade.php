@@ -38,12 +38,12 @@
     <table>
         <input type="hidden" name="_token" value="{!! csrf_token() !!}"/>
         <tr>
-            <td>Username</td>
-            <td><input type="email" name="user"/></td>
+            <td>Email</td>
+            <td><input type="email" name="email"/></td>
         </tr>
         <tr>
             <td>Password</td>
-            <td><input type="password" name="pass"/></td>
+            <td><input type="password" name="password"/></td>
         </tr>
         <tr>
             <td></td>
