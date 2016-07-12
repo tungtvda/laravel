@@ -8,9 +8,12 @@
 namespace App\Modules\Users\Controllers;
 use DB;
 use Illuminate\Http\Request;
+use App\Modules\Users\Requests\LoginRequest;
+use App\Modules\Users\Requests\RegisterRequest;
 use App\Modules\Controller;
 use App\Modules\Users\Models\Users;
-use Illuminate\Support\Facades\Input;
+use Illuminate\Http\Response;
+use Hash;
 
 class UsersController extends Controller{
     /**
@@ -202,5 +205,24 @@ class UsersController extends Controller{
         else{
             return $this->_return('','Đã trùng lịch',true,200);
         }
+    }
+
+    public function getLogin(){
+        return view('Users::login');
+    }
+    public function postLogin(LoginRequest $request){
+        print_r($request->all());
+    }
+    public function getRegister(){
+        return view('Users::register');
+    }
+    public function postRegister(RegisterRequest $request){
+        $this->model->name=$request->name;
+        $this->model->email=$request->email;
+        $this->model->password=Hash::make($request->password);
+        $this->model->remember_token=$request->_token;
+        $this->model->save();
+
+
     }
 }
