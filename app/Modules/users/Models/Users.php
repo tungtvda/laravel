@@ -21,7 +21,7 @@ class Users extends Model
      * @var array
      */
     protected $hidden = [
-
+        'password'
     ];
     public function getByAll($condition,$value,$field_order,$order, $start, $limit)
     {
