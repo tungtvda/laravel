@@ -26,6 +26,12 @@ class ModuleServiceProvider extends ServiceProvider
             if(is_dir(__DIR__.'/'.$module.'/Views')) {
                 $this->loadViewsFrom(__DIR__.'/'.$module.'/Views', $module);
             }
+            if(is_dir(__DIR__.'/Views')) {
+                $this->loadViewsFrom(__DIR__.'/Views', 'Admin');
+            }
+            if(is_dir(__DIR__.'/Views')) {
+                $this->loadViewsFrom(__DIR__.'/Views/Templates', 'Templates');
+            }
         }
     }
 

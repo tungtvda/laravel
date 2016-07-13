@@ -59,4 +59,24 @@ class Controller extends BaseController
     public function _returnLinkImage(){
         return 'http://' . $_SERVER['HTTP_HOST'] . "/vgm/";
     }
+    // return parent_id
+    public function _returnParentId($data, $id_field,$name_field, $parent=0,$str='--',$select=0){
+        foreach($data as $key=>$val){
+            if(isset($val[$id_field])&&isset($val[$name_field]))
+            {
+                $id=$val[$id_field];
+                $name=$val[$name_field];
+                if($val['parent_id']==$parent)
+                {
+                    if($select!=0&&$id==$select) {
+                        echo "<option value='$id' selected='selected'>$str $name</option>";
+                    }
+                    else{
+                       echo "<option value='$id' selected='selected'>$str $name</option>";
+                    }
+                    $this->_returnParentId($data, $id_field,$name_field, $id,$str.'&nbsp;&nbsp;',$select=0);
+                }
+            }
+        }
+    }
 }
