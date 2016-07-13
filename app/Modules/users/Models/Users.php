@@ -21,7 +21,7 @@ class Users extends Model
      * @var array
      */
     protected $hidden = [
-        'password'
+        'password','remember_token'
     ];
     public function getByAll($condition,$value,$field_order,$order, $start, $limit)
     {
@@ -31,14 +31,17 @@ class Users extends Model
     {
         return Users::select('id', 'email', 'first_name as firstName', 'last_name as lastName','gender', 'phone', 'birthday')->find($id);
     }
-    public function profile($id) {
-        return \App\Modules\Profile\Models\Profile::select('id', 'user_id as userId', 'height', 'round_breast as roundBreast','waist_size as waistSize', 'round_hip as roundHip', 'dress_size as dressSize','shore_size as shoreSize','hair_color as hairColor','eye_color as eyeColor')->find($id);
-    }
-    public function image($id) {
-        return \App\Modules\Gallery\Models\Gallery::select('id','user_id as userId','images')->where('user_id',$id)->get();
-    }
-    public function booking($condition,$value) {
-        return \App\Modules\Booking\Models\Booking::select('id')->whereRaw($condition, $value)->count();
+//    public function profile($id) {
+//        return \App\Modules\Profile\Models\Profile::select('id', 'user_id as userId', 'height', 'round_breast as roundBreast','waist_size as waistSize', 'round_hip as roundHip', 'dress_size as dressSize','shore_size as shoreSize','hair_color as hairColor','eye_color as eyeColor')->find($id);
+//    }
+//    public function image($id) {
+//        return \App\Modules\Gallery\Models\Gallery::select('id','user_id as userId','images')->where('user_id',$id)->get();
+//    }
+//    public function booking($condition,$value) {
+//        return \App\Modules\Booking\Models\Booking::select('id')->whereRaw($condition, $value)->count();
+//    }
+    public function products(){
+        return $this->hasMany('\App\Modules\Products\Product');
     }
 
 
