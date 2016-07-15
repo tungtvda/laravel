@@ -43,7 +43,6 @@
                 </form>
             </div><!-- /.nav-search -->
         </div>
-
         <div class="page-content">
             <div class="ace-settings-container" id="ace-settings-container">
                 <div class="btn btn-app btn-xs btn-warning ace-settings-btn" id="ace-settings-btn">
@@ -561,6 +560,7 @@
                                         <th>Name</th>
                                         <th>Alias</th>
                                         <th >Order</th>
+
                                         <th>
                                             <i class="ace-icon fa fa-clock-o bigger-110 hidden-480"></i>
                                             Created
@@ -570,7 +570,12 @@
                                             Update
                                         </th>
 
-
+                                        <th>Status</th>
+                                        {{--<th>Test2</th>--}}
+                                        {{--<th>Test3</th>--}}
+                                        {{--<th>Test4</th>--}}
+                                        {{--<th>Test5</th>--}}
+                                        {{--<th>Test6</th>--}}
 
                                         <th >Action</th>
 
@@ -591,12 +596,20 @@
                                             <a href="#">{!! $data['name'] !!}</a>
                                         </td>
                                         <td>{!! $data['alias'] !!}</td>
-                                        <td class="hidden-480">{!! $data['order'] !!}</td>
+                                        <td>{!! $data['order'] !!}</td>
                                         <td>{!! $data['created_at'] !!}</td>
-
-                                        <td class="hidden-480">
-                                            <span class="label label-sm label-warning">{!! $data['updated_at'] !!}</span>
+                                        <td >
+                                         {!! $data['updated_at'] !!}
                                         </td>
+                                        <td><label>
+                                                <input name="switch-field-1" class="ace ace-switch ace-switch-4" type="checkbox">
+                                                <span class="lbl"></span>
+                                            </label></td>
+                                        {{--<td>Test</td>--}}
+                                        {{--<td>Test</td>--}}
+                                        {{--<td>Test</td>--}}
+                                        {{--<td>Test</td>--}}
+                                        {{--<td>Test</td>--}}
                                         <td>
                                             <div class="hidden-sm hidden-xs action-buttons">
                                                 <a class="blue" href="#">
@@ -777,3 +790,4 @@
 
 
 @endsection
+

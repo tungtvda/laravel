@@ -66,8 +66,17 @@
 <!-- ace scripts -->
 <script src="assets/js/ace-elements.min.js"></script>
 <script src="assets/js/ace.min.js"></script>
-
+<script src="assets/js/ace.min.js"></script>
 <!-- inline scripts related to this page -->
+<?php
+if(!isset($count)) {
+    $count=0;
+    $count_show=0;
+}
+else{
+    $count_show=$count+1;
+}
+?>
 <script type="text/javascript">
     jQuery(function($) {
         //initiate dataTables plugin
@@ -78,24 +87,34 @@
                             bAutoWidth: false,
                             "aoColumns": [
                                 { "bSortable": false },
-                                null, null,null, null, null,
+                                    <?php
+                                        for($i=0;$i<$count;$i++){
+                                            echo 'null,';
+                                        }
+                                    ?>
+
                                 { "bSortable": false }
                             ],
-                            "aaSorting": [],
-
+//                            "aaSorting": [],
+                            "info":           true,
+                            "paging":         true,
+                            select: true,
+                            'createdRow': function(row, data, dataIndex){
+                                $(row).attr('id', 'row-' + dataIndex);
+                            },
                             //,
-                            //"sScrollY": "200px",
-                            //"bPaginate": false,
+//                            "sScrollY": "200px",
+                            "bPaginate": false,
 
-                            //"sScrollX": "100%",
-                            //"sScrollXInner": "120%",
-                            //"bScrollCollapse": true,
+//                            "sScrollX": "100%",
+//                            "sScrollXInner": "120%",
+//                            "bScrollCollapse": true,
                             //Note: if you are applying horizontal scrolling (sScrollX) on a ".table-bordered"
                             //you may want to wrap the table inside a "div.dataTables_borderWrap" element
 
-                            //"iDisplayLength": 50
+                            "iDisplayLength": 50
                         } );
-        //oTable1.fnAdjustColumnSizing();
+//        oTable1.fnAdjustColumnSizing();
 
 
         //TableTools settings
@@ -187,7 +206,7 @@
         //ColVis extension
         var colvis = new $.fn.dataTable.ColVis( oTable1, {
             "buttonText": "<i class='fa fa-search'></i>",
-            "aiExclude": [0, 20],
+            "aiExclude": [0, {!! $count_show !!}],
             "bShowAll": true,
             //"bRestore": true,
             "sAlign": "right",
