@@ -66,7 +66,7 @@
 <!-- ace scripts -->
 <script src="assets/js/ace-elements.min.js"></script>
 <script src="assets/js/ace.min.js"></script>
-<script src="assets/js/ace.min.js"></script>
+
 <!-- inline scripts related to this page -->
 <?php
 if(!isset($count)) {
@@ -88,14 +88,14 @@ else{
                             "aoColumns": [
                                 { "bSortable": false },
                                     <?php
-                                        for($i=0;$i<$count;$i++){
-                                            echo 'null,';
-                                        }
+                                    for($i=0;$i<$count;$i++){
+                                        echo 'null,';
+                                    }
                                     ?>
 
                                 { "bSortable": false }
                             ],
-//                            "aaSorting": [],
+                            "aaSorting": [],
                             "info":           true,
                             "paging":         true,
                             select: true,
@@ -308,3 +308,35 @@ else{
 </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
