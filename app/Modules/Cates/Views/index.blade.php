@@ -289,14 +289,39 @@
                                     </tr>
                                     @endforeach
 
-
-
-
                                     </tbody>
                                 </table>
                             </div>
+                            <div class="hr hr-18 dotted hr-double"></div>
+                            <div class="btn-groupn col-md-12" style="padding-left: 0px">
+                                <button data-toggle="dropdown" class="btn btn-sm btn-danger dropdown-toggle btn-action-gird" aria-expanded="false">
+                                    Action
+                                    <i class="ace-icon fa fa-angle-down icon-on-right"></i>
+                                </button>
+
+                                <ul class="dropdown-menu dropdown-danger">
+                                    <li>
+                                        <a href="">Edit</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="">Delete</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="">Something else here</a>
+                                    </li>
+
+                                    <li class="divider"></li>
+
+                                    <li>
+                                        <a href="">Separated link</a>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
+
 
                     <div id="modal-table" class="modal fade" tabindex="-1">
                         <div class="modal-dialog">
@@ -414,8 +439,11 @@
                         </div>
                     </div><!-- PAGE CONTENT ENDS -->
                 </div><!-- /.col -->
+
             </div><!-- /.row -->
+
         </div><!-- /.page-content -->
+
     </div>
 </div><!-- /.main-content -->
 
