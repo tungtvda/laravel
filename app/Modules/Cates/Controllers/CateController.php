@@ -12,6 +12,7 @@ use App\Modules\Cates\Requests\CreateRequest;
 //use App\Http\Controllers\Controller;
 use App\Modules\Controller;
 use App\Modules\Cates\Models\Cate;
+use Illuminate\Support\Facades\View;
 
 class CateController extends Controller{
     /**
@@ -31,7 +32,7 @@ class CateController extends Controller{
     public function index(Request $request)
     {
         $data= $this->model->all()->toArray();
-        return view('Cates::index')->with('datas',$data);
+        return view('Cates::index')->with(['datas'=>$data,'count'=>6]);
     }
 
     /**
