@@ -28,6 +28,8 @@
     <link rel="stylesheet" href="{!! url('admin/assets/css/ace-ie.min.css') !!}" />
     <![endif]-->
 
+    <!-- my style-->
+    <link rel="stylesheet" href="{!! url('admin/assets/css/mycss.css') !!}" />
     <!-- inline styles related to this page -->
 
     <!-- ace settings handler -->
@@ -43,7 +45,7 @@
 </head>
 
 <body class="no-skin">
-<div style="background: url(assets/images/header-bg.jpg)" id="navbar" class="navbar navbar-default">
+<div  id="navbar" class="navbar navbar-default">
     <script type="text/javascript">
         try{ace.settings.check('navbar' , 'fixed')}catch(e){}
     </script>
