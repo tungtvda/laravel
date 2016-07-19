@@ -1,3 +1,8 @@
+
+</div><!-- /.page-content -->
+
+</div>
+</div><!-- /.main-content -->
 <div class="footer">
     <div class="footer-inner">
         <div class="footer-content">
