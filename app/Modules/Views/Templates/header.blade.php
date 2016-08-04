@@ -13,6 +13,13 @@
     <link rel="stylesheet" href="{!! url('admin/assets/font-awesome/4.2.0/css/font-awesome.min.css') !!}" />
 
     <!-- page specific plugin styles -->
+    <link rel="stylesheet" href="{!! url('admin/assets/css/jquery-ui.custom.min.css') !!}" />
+    <link rel="stylesheet" href="{!! url('admin/assets/css/chosen.min.css') !!}" />
+    <link rel="stylesheet" href="{!! url('admin/assets/css/datepicker.min.css') !!}" />
+    <link rel="stylesheet" href="{!! url('admin/assets/css/bootstrap-timepicker.min.css') !!}" />
+    <link rel="stylesheet" href="{!! url('admin/assets/css/daterangepicker.min.css') !!}" />
+    <link rel="stylesheet" href="{!! url('admin/assets/css/bootstrap-datetimepicker.min.css') !!}" />
+    <link rel="stylesheet" href="{!! url('admin/assets/css/colorpicker.min.css') !!}" />
 
     <!-- text fonts -->
     <link rel="stylesheet" href="{!! url('admin/assets/fonts/fonts.googleapis.com.css') !!}" />
