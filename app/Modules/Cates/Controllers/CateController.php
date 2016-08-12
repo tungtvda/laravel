@@ -7,6 +7,7 @@
  */
 namespace App\Modules\Cates\Controllers;
 use DB;
+//use Illuminate\Routing\Route;
 use Illuminate\Http\Request;
 use App\Modules\Cates\Requests\CreateRequest;
 //use App\Http\Controllers\Controller;
@@ -31,8 +32,14 @@ class CateController extends Controller{
      */
     public function index(Request $request)
     {
-        $data= $this->model->all()->toArray();
-        return view('Cates::index')->with(['datas'=>$data,'count'=>6]);
+        $dk='id > ? ';
+        $value=array('0');
+        $field_oder='id';
+        $order='DESC';
+        $prevPageUrl=$nextPageUrl = $this->_returnLinkServer();
+        return $this->_returnGetByAll('Cate',$this->model,$request,$dk,$value,$field_oder, $order,$nextPageUrl,$prevPageUrl);
+//        $data= $this->model->all()->toArray();
+//        return view('Cates::index')->with(['datas'=>$data,'count'=>6]);
     }
 
     /**
@@ -53,38 +60,11 @@ class CateController extends Controller{
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(CreateRequest $request)
+    public function store(Request $request)
     {
-        //
-        $data       = $this->model;
-        if ($request->has('name')&&$request->name!='') {
-            $data->name=$request->name;
-        }
-        if ($request->has('parent_id')&&$request->parent_id!='') {
-            $data->parent_id=$request->parent_id;
-        }
-        if ($request->has('alias')&&$request->alias!='') {
-            $data->alias=$request->alias;
-        }
-        if ($request->has('order')&&$request->order!='') {
-            $data->order=$request->order;
-        }
-        if ($request->has('order')&&$request->order!='') {
-            $data->order=$request->order;
-        }
-        if ($request->has('keywords')&&$request->keywords!='') {
-            $data->keywords=$request->keywords;
-        }
-        if ($request->has('description')&&$request->description!='') {
-            $data->description=$request->description;
-        }
-        try {
-            $data->save();
-            return redirect('admin/cate')->with(['flash_message'=>'Successfully']);
-        } catch (QueryException $e) {
-//            return response()->json(['message' => $e->getMessage()], 403);
-            return $this->_return($data,$e->getMessage(),false,200);
-        }
+        $model       = $this->model;
+        $condition='';
+        return $this->_returnCreate('Cates',$model,$condition);
     }
 
     /**
@@ -95,16 +75,8 @@ class CateController extends Controller{
      */
     public function show($id)
     {
-        try {
-            $data=$this->model->find($id);
-            if(!empty($data))
-            {
-            }
-            return $this->_return($data,'Successfully',true,200);
-        } catch (QueryException $e) {
-            return response()->json(['message' => 'Not found'], 404);
-        }
-
+        $model       = $this->model;
+        return $this->_returnView($id,$model);
     }
 
     /**
