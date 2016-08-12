@@ -17,9 +17,7 @@
                         <div class="col-xs-12">
                             <div class="clearfix">
                                 <div class="col-md-6 col-sm-6 col-xs-12 pink" style="padding-left: 0px">
-                                    {{--<i class="ace-icon fa fa-hand-o-right icon-animated-hand-pointer blue"></i>--}}
-                                    {{--<a > Table Inside a Modal Box </a>--}}
-                                    <a href="#modal-table" role="button"  data-toggle="modal" class="green btn btn-white btn-create btn-hover-white">
+                                    <a href="#modal-form" role="button"  data-toggle="modal" class="green btn btn-white btn-create btn-hover-white">
                                         <i class="ace-icon fa fa-plus bigger-120 "></i>
                                         Create popup
                                         <i class="ace-icon fa fa-external-link"></i>
@@ -135,6 +133,9 @@
                                                 <a class="green" href="#">
                                                     <i class="ace-icon fa fa-pencil bigger-130"></i>
                                                 </a>
+                                                <a class="" href="#">
+                                                    <i class="ace-icon glyphicon glyphicon-edit"></i>
+                                                </a>
 
                                                 <a class="red" href="#">
                                                     <i class="ace-icon fa fa-trash-o bigger-130"></i>
@@ -159,7 +160,14 @@
                                                         <li>
                                                             <a href="#" class="tooltip-success" data-rel="tooltip" title="Edit">
 																				<span class="green">
-																					<i class="ace-icon fa fa-pencil-square-o bigger-120"></i>
+																					<i class="ace-icon fa fa-pencil bigger-120"></i>
+																				</span>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#" class="tooltip-success" data-rel="tooltip" title="Edit">
+																				<span class="">
+																					<i class="ace-icon glyphicon glyphicon-edit  bigger-120"></i>
 																				</span>
                                                             </a>
                                                         </li>
@@ -212,20 +220,22 @@
                     </div>
 
 
-                    <div id="modal-table" class="modal fade" tabindex="-1">
+                    <div id="modal-form" class="modal" tabindex="-1">
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal">×</button>
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
                                     <h4 class="blue bigger">Please fill the following form fields</h4>
                                 </div>
 
                                 <div class="modal-body">
+
                                     <div class="row">
+
                                         <div class="col-xs-12 col-sm-5">
                                             <div class="space"></div>
 
-                                            <label class="ace-file-input ace-file-multiple"><input type="file"><span class="ace-file-container" data-title="Drop files here or click to choose"><span class="ace-file-name" data-title="No File ..."><i class=" ace-icon ace-icon fa fa-cloud-upload"></i></span></span><a class="remove" href="#"><i class=" ace-icon fa fa-times"></i></a></label>
+                                            <input type="file" />
                                         </div>
 
                                         <div class="col-xs-12 col-sm-7">
@@ -233,7 +243,7 @@
                                                 <label for="form-field-select-3">Location</label>
 
                                                 <div>
-                                                    <select class="chosen-select" data-placeholder="Choose a Country..." style="display: none;">
+                                                    <select class="chosen-select" data-placeholder="Choose a Country...">
                                                         <option value="">&nbsp;</option>
                                                         <option value="AL">Alabama</option>
                                                         <option value="AK">Alaska</option>
@@ -285,7 +295,7 @@
                                                         <option value="WV">West Virginia</option>
                                                         <option value="WI">Wisconsin</option>
                                                         <option value="WY">Wyoming</option>
-                                                    </select><div class="chosen-container chosen-container-single" style="width: 0px;" title=""><a class="chosen-single" tabindex="-1" style="width: 210px;"><span>&nbsp;</span><div><b></b></div></a><div class="chosen-drop" style="width: 210px;"><div class="chosen-search"><input type="text" autocomplete="off" style="width: 200px;"></div><ul class="chosen-results"></ul></div></div>
+                                                    </select>
                                                 </div>
                                             </div>
 
@@ -295,7 +305,7 @@
                                                 <label for="form-field-username">Username</label>
 
                                                 <div>
-                                                    <input type="text" id="form-field-username" placeholder="Username" value="alexdoe">
+                                                    <input type="text" id="form-field-username" placeholder="Username" value="alexdoe" />
                                                 </div>
                                             </div>
 
@@ -305,12 +315,13 @@
                                                 <label for="form-field-first">Name</label>
 
                                                 <div>
-                                                    <input type="text" id="form-field-first" placeholder="First Name" value="Alex">
-                                                    <input type="text" id="form-field-last" placeholder="Last Name" value="Doe">
+                                                    <input type="text" id="form-field-first" placeholder="First Name" value="Alex" />
+                                                    <input type="text" id="form-field-last" placeholder="Last Name" value="Doe" />
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
+
                                 </div>
 
                                 <div class="modal-footer">
