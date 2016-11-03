@@ -10,9 +10,9 @@ Route::group(
 //    ['prefix'=>'admin','middleware' => 'web','module'=>'Cates', 'namespace' => $namespace],
     ['middleware' => 'web','module'=>'Cates', 'namespace' => $namespace],
     function() {
-        Route::resource('api/cate', 'CateController');
-//        Route::GET('cate/create','CateController@create');
+//        Route::resource('api/cate', 'CateController');
+        Route::GET('admin/create','CateController@create');
 //        Route::get('api/cate','CateController@store');
-//        Route::GET('category','BookingController');
+//        Route::GET('cate','CateController');
     }
 );

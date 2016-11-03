@@ -215,20 +215,25 @@ class UsersController extends Controller{
         return response()->json(Auth::user());
         return view('Users::login');
     }
-    public function postLogin(LoginRequest $request){
-        $email=$request->email;
-         $pass=$request->password;
-        $auth=array(
-            'email'=>$email,
-            'password'=>$pass
-        );
-        if(Auth::attempt($auth))
-        {
-            print_r(Auth::user());
-        }
-        else{
-            echo 'thaats bai';
-        }
+    public function postLogin(Request $request){
+//        $email=$request->email;
+//         $pass=$request->password;
+//        $auth=array(
+//            'email'=>$email,
+//            'password'=>$pass
+//        );
+//        if(Auth::attempt($auth))
+//        {
+//            print_r(Auth::user());
+//        }
+//        else{
+//            echo 'thaats bai';
+//        }
+        $username = addslashes(strip_tags($request->username));
+         $password = addslashes(strip_tags($request->password));
+        $pass_md5 = md5($password);
+        return $this->_returnLogin($this->model,$username, $pass_md5);
+        exit;
     }
     public function getRegister(){
         return view('Users::register');

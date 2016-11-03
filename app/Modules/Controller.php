@@ -119,6 +119,21 @@ class Controller extends BaseController
         }
     }
 
+
+    // return login user
+    public function _returnLogin($model, $username, $password){
+        $condition='username = ? and password = ?';
+        $value=array($username,$password);
+        $data=$model::select('id','username','email')->whereRaw($condition, $value)->get()->toArray();
+        if(count($data)>0){
+            print_r($data);
+        }
+        else{
+            return $this->_return('', false, 'The username or password does not exist', 401);
+        }
+    }
+
+
     //return response
     public function _return($arr_response,$mess,$status,$num){
         return response()->json(['data'=>$arr_response,'message'=>$mess, "success"=>$status],$num);

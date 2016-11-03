@@ -48,6 +48,28 @@
     <script src="{!! url('admin/assets/js/html5shiv.min.js') !!}"></script>
     <script src="{!! url('admin/assets/js/respond.min.js') !!}"></script>
     <![endif]-->
+    <script type="text/javascript">
+        var sitename='{!! url('') !!}';
+    </script>
+    <script type="text/javascript" src="{!! url('admin/assets/ckeditor/ckeditor.js') !!}"></script>
+    <script type="text/javascript">
+        function openKcEditor(output) {
+            var L_AnhMinhHoa = document.getElementsByName(output);
+            var AnhMinhHoa = L_AnhMinhHoa[0];
+            window.KCFinder = {
+                callBack: function (url) {
+                    window.KCFinder = null;
+                    AnhMinhHoa.value = url;
+                }
+            };
+            window.open('{!! url('admin/assets/kcfinder/browse.php?type=images&dir=images/public') !!}',
+                    'kcfinder_image', 'status=0, toolbar=0, location=0, menubar=0, ' +
+                    'directories=0, resizable=1, scrollbars=0, width=800, height=600'
+            );
+        }
+        ;
 
+
+    </script>
 </head>
 

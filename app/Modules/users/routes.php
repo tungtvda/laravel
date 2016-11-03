@@ -12,7 +12,7 @@ Route::group(
         Route::resource('Users', 'UsersController');
         Route::POST('check-date', 'UsersController@checkDate');
         Route::GET('login/auth', 'UsersController@getLogin');
-        Route::POST('login/auth', 'UsersController@postLogin');
+        Route::POST('api/login', 'UsersController@postLogin');
         Route::GET('user-register', 'UsersController@getRegister');
         Route::POST('user-register', 'UsersController@postRegister');
 
