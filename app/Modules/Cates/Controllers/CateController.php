@@ -7,7 +7,7 @@
  */
 namespace App\Modules\Cates\Controllers;
 use DB;
-//use Illuminate\Routing\Route;
+use Illuminate\Routing\Route;
 use Illuminate\Http\Request;
 use App\Modules\Cates\Requests\CreateRequest;
 //use App\Http\Controllers\Controller;
@@ -21,8 +21,14 @@ class CateController extends Controller{
      *
      * @return void
      */
-    public function __construct(Cate $model)
+    public function __construct(Cate $model,Request $request)
     {
+        $arr_name_action=array('index','store','show','update','destroy');
+        $name_action= str_replace('api.cate.','',$request->route()->getName());
+        if(in_array($name_action,$arr_name_action)){
+//            return $this->_returnCheckToken();
+        }
+
         $this->model = $model;
     }
     /**
@@ -32,6 +38,9 @@ class CateController extends Controller{
      */
     public function index(Request $request)
     {
+                $data= $this->model->all()->toArray();
+        return view('Cates::index')->with(['datas'=>$data,'count'=>6]);
+        exit;
         $dk='id > ? ';
         $value=array('0');
         $field_oder='id';

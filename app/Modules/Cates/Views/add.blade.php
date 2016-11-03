@@ -37,6 +37,12 @@
                 <td>Alias</td>
                 <td>
                     <input type="text" name="alias" >
+                    <?php
+                        if(isset($arr_err['name']))
+                            {
+                                echo $arr_err['name'];
+                            }
+                    ?>
                 </td>
             </tr>
             <tr>
@@ -54,7 +60,13 @@
             <tr>
                 <td>Description</td>
                 <td>
-                    <input type="text" name="description" >
+                    <input class="text-input small-input" type="text"  name="img" value=""/><a class="button" onclick="openKcEditor('img');">Upload ảnh</a>
+                </td>
+            </tr>
+            <tr>
+                <td>Description</td>
+                <td>
+                    <textarea name="summary"></textarea><script type="text/javascript">CKEDITOR.replace('summary'); </script>
                 </td>
             </tr>
             <tr>
