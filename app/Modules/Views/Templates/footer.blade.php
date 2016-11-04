@@ -8,8 +8,8 @@
     <div class="footer-inner">
         <div class="footer-content">
 						<span class="bigger-120">
-							<span class="blue bolder">Ace</span>
-							Application &copy; 2013-2014
+							<span class="blue bolder">Tungtv</span>
+							Application &copy; 2016-2017
 						</span>
 
             &nbsp; &nbsp;
@@ -39,63 +39,63 @@
 <!-- basic scripts -->
 
 <!--[if !IE]> -->
-<script src="assets/js/jquery.2.1.1.min.js"></script>
+<script src="{!! url('admin/assets/js/jquery.2.1.1.min.js') !!}"></script>
 
 <!-- <![endif]-->
 
 <!--[if IE]>
-<script src="assets/js/jquery.1.11.1.min.js"></script>
+<script src="{!! url('admin/assets/js/jquery.1.11.1.min.js') !!}"></script>
 <![endif]-->
 
 <!--[if !IE]> -->
 <script type="text/javascript">
-    window.jQuery || document.write("<script src='assets/js/jquery.min.js'>"+"<"+"/script>");
+    window.jQuery || document.write("<script src='{!! url('admin/assets/js/jquery.min.js') !!}'>"+"<"+"/script>");
 </script>
 
 <!-- <![endif]-->
 
 <!--[if IE]>
 <script type="text/javascript">
-    window.jQuery || document.write("<script src='assets/js/jquery1x.min.js'>"+"<"+"/script>");
+    window.jQuery || document.write("<script src='{!! url('admin/assets/js/jquery1x.min.js') !!}'>"+"<"+"/script>");
 </script>
 <![endif]-->
 <script type="text/javascript">
-    if('ontouchstart' in document.documentElement) document.write("<script src='assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
+    if('ontouchstart' in document.documentElement) document.write("<script src='{!! url('admin/assets/js/jquery.mobile.custom.min.js') !!}'>"+"<"+"/script>");
 </script>
-<script src="assets/js/bootstrap.min.js"></script>
+<script src="{!! url('admin/assets/js/bootstrap.min.js') !!}"></script>
 
 <!-- page specific plugin scripts -->
-<script src="assets/js/jquery.dataTables.min.js"></script>
-<script src="assets/js/jquery.dataTables.bootstrap.min.js"></script>
-<script src="assets/js/dataTables.tableTools.min.js"></script>
-<script src="assets/js/dataTables.colVis.min.js"></script>
+<script src="{!! url('admin/assets/js/jquery.dataTables.min.js') !!}"></script>
+<script src="{!! url('admin/assets/js/jquery.dataTables.bootstrap.min.js') !!}"></script>
+<script src="{!! url('admin/assets/js/dataTables.tableTools.min.js') !!}"></script>
+<script src="{!! url('admin/assets/js/dataTables.colVis.min.js') !!}"></script>
 
 <!-- page specific plugin scripts -->
 
 <!-- page specific plugin scripts -->
 
 <!--[if lte IE 8]>
-<script src="assets/js/excanvas.min.js"></script>
+<script src="{!! url('admin/assets/js/excanvas.min.js') !!}"></script>
 <![endif]-->
-<script src="assets/js/jquery-ui.custom.min.js"></script>
-<script src="assets/js/jquery.ui.touch-punch.min.js"></script>
-<script src="assets/js/chosen.jquery.min.js"></script>
-<script src="assets/js/fuelux.spinner.min.js"></script>
-<script src="assets/js/bootstrap-datepicker.min.js"></script>
-<script src="assets/js/bootstrap-timepicker.min.js"></script>
-<script src="assets/js/moment.min.js"></script>
-<script src="assets/js/daterangepicker.min.js"></script>
-<script src="assets/js/bootstrap-datetimepicker.min.js"></script>
-<script src="assets/js/bootstrap-colorpicker.min.js"></script>
-<script src="assets/js/jquery.knob.min.js"></script>
-<script src="assets/js/jquery.autosize.min.js"></script>
-<script src="assets/js/jquery.inputlimiter.1.3.1.min.js"></script>
-<script src="assets/js/jquery.maskedinput.min.js"></script>
-<script src="assets/js/bootstrap-tag.min.js"></script>
+<script src="{!! url('admin/assets/js/jquery-ui.custom.min.js') !!}"></script>
+<script src="{!! url('admin/assets/js/jquery.ui.touch-punch.min.js') !!}"></script>
+<script src="{!! url('admin/assets/js/chosen.jquery.min.js') !!}"></script>
+<script src="{!! url('admin/assets/js/fuelux.spinner.min.js') !!}"></script>
+<script src="{!! url('admin/assets/js/bootstrap-datepicker.min.js') !!}"></script>
+<script src="{!! url('admin/assets/js/bootstrap-timepicker.min.js') !!}"></script>
+<script src="{!! url('admin/assets/js/moment.min.js') !!}"></script>
+<script src="{!! url('admin/assets/js/daterangepicker.min.js') !!}"></script>
+<script src="{!! url('admin/assets/js/bootstrap-datetimepicker.min.js') !!}"></script>
+<script src="{!! url('admin/assets/js/bootstrap-colorpicker.min.js') !!}"></script>
+<script src="{!! url('admin/assets/js/jquery.knob.min.js') !!}"></script>
+<script src="{!! url('admin/assets/js/jquery.autosize.min.js') !!}"></script>
+<script src="{!! url('admin/assets/js/jquery.inputlimiter.1.3.1.min.js') !!}"></script>
+<script src="{!! url('admin/assets/js/jquery.maskedinput.min.js') !!}"></script>
+<script src="{!! url('admin/assets/js/bootstrap-tag.min.js') !!}"></script>
 <!-- ace scripts -->
-<script src="assets/js/ace-elements.min.js"></script>
-<script src="assets/js/ace.min.js"></script>
-
+<script src="{!! url('admin/assets/js/ace-elements.min.js') !!}"></script>
+<script src="{!! url('admin/assets/js/ace.min.js') !!}"></script>
+<script src="{!! url('admin/assets/js/myjs.js') !!}"></script>
 <!-- inline scripts related to this page -->
 <?php
 if(!isset($count)) {
@@ -167,7 +167,9 @@ else{
             },
             "fnRowDeselected": function(row) {
                 //uncheck checkbox
-                try { $(row).find('input[type=checkbox]').get(0).checked = false }
+                try {
+                    $(row).find('input[type=checkbox]').get(0).checked = false
+                }
                 catch(e) {}
             },
 
@@ -263,7 +265,7 @@ else{
 
         /////////////////////////////////
         //table checkboxes
-        $('th input[type=checkbox], td input[type=checkbox]').prop('checked', false);
+        $('th input[type=checkbox]').prop('checked', false);
 
         //select/deselect all rows according to table header checkbox
         $('#dynamic-table > thead > tr > th input[type=checkbox]').eq(0).on('click', function(){
@@ -277,7 +279,7 @@ else{
         });
 
         //select/deselect a row when the checkbox is checked/unchecked
-        $('#dynamic-table').on('click', 'td input[type=checkbox]' , function(){
+        $('#dynamic-table').on('click', '.click_check_list' , function(){
             var row = $(this).closest('tr').get(0);
             if(!this.checked) tableTools_obj.fnSelect(row);
             else tableTools_obj.fnDeselect($(this).closest('tr').get(0));

@@ -16,7 +16,7 @@ use Illuminate\Http\Response;
 use Hash;
 use Illuminate\Support\Facades\Auth;
 
-class UsersController extends Controller{
+class ApiUsersController extends Controller{
     /**
      * Create a new authentication controller instance.
      *
@@ -25,8 +25,6 @@ class UsersController extends Controller{
     public function __construct(Users $model)
     {
         $this->model = $model;
-        $url=url('/');
-        $this->breadcrumbs="<li><a href=\"$url\\admin\\users\">Users</a></li>";
     }
     /**
      * Display a listing of the resource.
@@ -35,17 +33,22 @@ class UsersController extends Controller{
      */
     public function index(Request $request)
     {
-        $condition='id > ? ';
+        $dk='id > ? ';
         $value=array('0');
         $field_oder='id';
         $order='DESC';
-        $data= $this->_returnGetByAll('Users',$this->model,$request,$condition,$value,$field_oder, $order);
-        $url_bread=$this->breadcrumbs."<li class=\"active\">List</li>";
-        return view('Users::index')->with([
-            'datas'=>$data,
-            'count'=>7,
-            'breadcrumbs'=>$url_bread
-        ]);
+        $prevPageUrl=$nextPageUrl = $this->_returnLinkServer();
+        return $this->_returnGetByAllPaging('Model',$this->model,$request,$dk,$value,$field_oder, $order,$nextPageUrl,$prevPageUrl);
+//        $data = $this->model->getByAll($dk,$value,'id','asc');
+//        $arr_response=array();
+//        if(!empty($data))
+//        {
+//            array_push($arr_response,$data);
+//            return $this->_return($arr_response,'Successfully',true,200);
+//        }
+//        else{
+//            $this->_return('',true,'Model is empty',200);
+//        }
     }
 
     /**

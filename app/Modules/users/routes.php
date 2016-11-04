@@ -9,12 +9,16 @@ $namespace = 'App\Modules\Users\Controllers';
 Route::group(
     ['module'=>'Users','middleware' => 'web', 'namespace' => $namespace],
     function() {
-        Route::resource('Users', 'UsersController');
-        Route::POST('check-date', 'UsersController@checkDate');
-        Route::GET('login/auth', 'UsersController@getLogin');
-        Route::POST('api/login', 'UsersController@postLogin');
-        Route::GET('user-register', 'UsersController@getRegister');
-        Route::POST('user-register', 'UsersController@postRegister');
+//        Route::resource('Users', 'UsersController');
+//        Route::POST('check-date', 'UsersController@checkDate');
+//        Route::GET('login/auth', 'UsersController@getLogin');
+//        Route::POST('api/login', 'UsersController@postLogin');
+//        Route::GET('user-register', 'UsersController@getRegister');
+//        Route::POST('user-register', 'UsersController@postRegister');
+            //Link api
+            Route::resource('api/users', 'ApiUsersController');
 
+            //link admin
+            Route::GET('admin/users', 'UsersController@index');
     }
 );
