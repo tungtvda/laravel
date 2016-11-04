@@ -16,6 +16,7 @@ class ComposerStaticInit9a92a98a54d0b11baab560f5d1938b64
         '5255c38a0faeba867671b61dfda6d864' => __DIR__ . '/..' . '/paragonie/random_compat/lib/random.php',
         'f0906e6318348a765ffb6eb24e0d0938' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/helpers.php',
         '58571171fd5812e6e447dce228f52f4d' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/helpers.php',
+        '0ffe97bb3b0137ce58fa12bcdf0c9fab' => __DIR__ . '/../..' . '/app/Modules/functions.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -269,10 +270,13 @@ class ComposerStaticInit9a92a98a54d0b11baab560f5d1938b64
     );
 
     public static $classMap = array (
+        'CreateCatesTable' => __DIR__ . '/../..' . '/database/migrations/2016_07_13_015152_create_cates_table.php',
         'CreateModelDatesTable' => __DIR__ . '/../..' . '/database/migrations/2016_07_06_073717_create_model_dates_table.php',
         'CreateModelImageTable' => __DIR__ . '/../..' . '/database/migrations/2016_07_04_033256_create_model_image_table.php',
         'CreateModelNudeTable' => __DIR__ . '/../..' . '/database/migrations/2016_07_04_033153_create_model_nude_table.php',
         'CreatePasswordResetsTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
+        'CreateProducImagesTable' => __DIR__ . '/../..' . '/database/migrations/2016_07_13_021913_create_produc_images_table.php',
+        'CreateProductsTable' => __DIR__ . '/../..' . '/database/migrations/2016_07_13_020624_create_products_table.php',
         'CreateUsersTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_000000_create_users_table.php',
         'DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeds/DatabaseSeeder.php',
         'File_Iterator' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Iterator.php',

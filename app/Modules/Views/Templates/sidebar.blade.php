@@ -20,7 +20,7 @@
             <a href="index.html" class="navbar-brand">
                 <small>
                     <i class="fa fa-leaf"></i>
-                    Ace Admin
+                    Tungtv Admin
                 </small>
             </a>
         </div>
@@ -842,3 +842,5 @@
             try{ace.settings.check('sidebar' , 'collapsed')}catch(e){}
         </script>
     </div>
+    <div class="main-content">
+        <div class="main-content-inner">

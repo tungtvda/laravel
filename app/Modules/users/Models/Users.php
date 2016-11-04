@@ -13,7 +13,7 @@ class Users extends Model
      *
      * @var array
      */
-    protected $fillable = ['id','name','email','address','phone','avatar','round_brest','waist_size','round_hip','dress_size','shore_size'];
+    protected $fillable = ['id','name','email'];
 
     /**
      * The attributes that should be hidden for arrays.
@@ -23,13 +23,17 @@ class Users extends Model
     protected $hidden = [
         'password','remember_token'
     ];
-    public function getByAll($condition,$value,$field_order,$order, $start, $limit)
+    public function getByAll($condition,$value,$field_order,$order)
     {
-        return Users::select('id', 'email', 'first_name as firstName', 'last_name as lastName','gender', 'phone', 'birthday')->take($limit)->skip($start)->whereRaw($condition, $value)->orderBy($field_order,$order)->get()->toArray();
+        return Users::select('*')->whereRaw($condition, $value)->orderBy($field_order,$order)->get()->toArray();
+    }
+    public function getByAllPaging($condition,$value,$field_order,$order, $start, $limit)
+    {
+        return Users::select('id', 'email', 'name')->take($limit)->skip($start)->whereRaw($condition, $value)->orderBy($field_order,$order)->get()->toArray();
     }
     public function getById($id)
     {
-        return Users::select('id', 'email', 'first_name as firstName', 'last_name as lastName','gender', 'phone', 'birthday')->find($id);
+        return Users::select('id', 'email', 'name')->find($id);
     }
 //    public function profile($id) {
 //        return \App\Modules\Profile\Models\Profile::select('id', 'user_id as userId', 'height', 'round_breast as roundBreast','waist_size as waistSize', 'round_hip as roundHip', 'dress_size as dressSize','shore_size as shoreSize','hair_color as hairColor','eye_color as eyeColor')->find($id);

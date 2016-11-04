@@ -11,8 +11,12 @@ Route::group(
     ['middleware' => 'web','module'=>'Cates', 'namespace' => $namespace],
     function() {
 //        Route::resource('api/cate', 'CateController');
+        //router admin
         Route::GET('admin/create','CateController@create');
-//        Route::get('api/cate','CateController@store');
+        Route::GET('admin/index','CateController@index');
+        //router client
+        // router api
+        Route::get('api/cate','ApiCateController@index');
 //        Route::GET('cate','CateController');
     }
 );

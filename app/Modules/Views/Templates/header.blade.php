@@ -54,12 +54,12 @@
     <script type="text/javascript" src="{!! url('admin/assets/ckeditor/ckeditor.js') !!}"></script>
     <script type="text/javascript">
         function openKcEditor(output) {
-            var L_AnhMinhHoa = document.getElementsByName(output);
-            var AnhMinhHoa = L_AnhMinhHoa[0];
+            var T_Tungtv = document.getElementsByName(output);
+            var Tungtv = T_Tungtv[0];
             window.KCFinder = {
                 callBack: function (url) {
                     window.KCFinder = null;
-                    AnhMinhHoa.value = url;
+                    Tungtv.value = url;
                 }
             };
             window.open('{!! url('admin/assets/kcfinder/browse.php?type=images&dir=images/public') !!}',

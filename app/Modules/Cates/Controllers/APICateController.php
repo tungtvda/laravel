@@ -38,8 +38,17 @@ class CateController extends Controller{
      */
     public function index(Request $request)
     {
-        $data= $this->model->all()->toArray();
+                $data= $this->model->all()->toArray();
         return view('Cates::index')->with(['datas'=>$data,'count'=>6]);
+//        exit;
+        $dk='id > ? ';
+        $value=array('0');
+        $field_oder='id';
+        $order='DESC';
+        $prevPageUrl=$nextPageUrl = $this->_returnLinkServer();
+        return $this->_returnGetByAll('Cate',$this->model,$request,$dk,$value,$field_oder, $order,$nextPageUrl,$prevPageUrl);
+//        $data= $this->model->all()->toArray();
+//        return view('Cates::index')->with(['datas'=>$data,'count'=>6]);
     }
 
     /**

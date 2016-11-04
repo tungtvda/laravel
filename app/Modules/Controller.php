@@ -14,7 +14,17 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, AuthorizesResources, DispatchesJobs, ValidatesRequests;
     //return get by all
-    public function _returnGetByAll($table, $model,$request,$dk,$value,$field_oder, $order, $nextPageUrl,$prevPageUrl)
+    public function _returnGetByAll($table, $model,$request,$dk,$value,$field_oder, $order)
+    {
+
+
+        if($request->filter!='')
+        {
+        }
+        $data = $model->getByAll($dk,$value,$field_oder,$order);
+        return $data;
+    }
+    public function _returnGetByAllPaging($table, $model,$request,$dk,$value,$field_oder, $order, $nextPageUrl,$prevPageUrl)
     {
         $start=0;
         $limit=25;
@@ -36,7 +46,7 @@ class Controller extends BaseController
 //            exit;
         }
 
-        $data = $model->getByAll($dk,$value,$field_oder,$order,$start,$limit);
+        $data = $model->getByAllPaging($dk,$value,$field_oder,$order,$start,$limit);
         $arr_response=array();
         if(!empty($data))
         {
