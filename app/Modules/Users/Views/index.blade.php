@@ -80,7 +80,7 @@
 
                             <!-- div.dataTables_borderWrap -->
                             <div>
-                                <table id="dynamic-table" class="table table-striped table-bordered table-hover">
+                                <table id="dynamic-table" class="table table-striped table-bordered table-hover table-responsive">
                                     <thead>
                                     <tr>
                                         <th class="center">
@@ -130,6 +130,7 @@
                                         <td>{!! $data['phone'] !!}</td>
                                         <td>{!! $data['gender'] !!}</td>
                                         <td>
+                                            <span hidden>{!! $data['status'] !!}</span>
                                             <label>
                                                 <input name="switch-field-1" class="ace ace-switch ace-switch-3 value-list-check-user"
                                                        {{ $data['status']==1 ? 'checked' : '' }} value="{!! $data['status'] !!}"
